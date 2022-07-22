@@ -172,7 +172,7 @@ class gui_game:
             self.label.config(text="   - ")
             time.sleep(0.08)
             self.label.config(text="    -")
-            time.sleep(0.2)
+            time.sleep(0.12)
             self.label.config(text="   - ")
             time.sleep(0.08)
             self.label.config(text="  -  ")
@@ -180,7 +180,7 @@ class gui_game:
             self.label.config(text=" -   ")
             time.sleep(0.08)
             self.label.config(text="-    ")
-            time.sleep(0.2)
+            time.sleep(0.12)
     def game_loop(self):
         self.start_button["state"] = "disabled"
         self.rounds_entry["state"] = "disabled"
