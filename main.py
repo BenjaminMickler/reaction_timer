@@ -119,11 +119,21 @@ class gui_game:
     def show_help_dialog(self):
         aboutdialog = AboutDialog(self.window)
         self.window.wait_window(aboutdialog.top)
+    def rounds_to_int(self, rounds):
+        try:
+            rounds = int(rounds)
+            return rounds
+        except:
+            return False
     def start_game(self, event):
         if self.game_running == False:
-            self.rounds = int(self.rounds_entry.get())
-            self.reaction_times = []
-            self.start_game_loop()
+            rounds = self.rounds_entry.get()
+            self.rounds = self.rounds_to_int(rounds)
+            if self.rounds == 0 or self.rounds == False:
+                tkinter.messagebox.showerror("Invalid rounds", "Please enter the number of rounds you would like to play.")
+            else:
+                self.reaction_times = []
+                self.start_game_loop()
     def game_loop(self):
         self.start_button["state"] = "disabled"
         self.rounds_entry["state"] = "disabled"
