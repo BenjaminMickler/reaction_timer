@@ -1,4 +1,4 @@
-HELP_MESSAGE = """usage: python3 main.py [arguments]
+HELP_MESSAGE = """usage: python3 main.py [arguments] [rounds]
 Arguments:
 -c, --cli, cli   :   Play the text-based version of the game
 -g, --gui, gui   :   Play the graphical version of the game

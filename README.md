@@ -15,7 +15,7 @@ git clone https://github.com/BenjaminMickler/reaction_timer.git
 ## Usage
 Navigate to the directory in which `main.py` is located in a terminal or terminal emulator (`cd reaction_timer` if you just cloned).
 ```
-usage: python3 main.py [arguments]
+usage: python3 main.py [arguments] [rounds]
 Arguments:
 -c, --cli, cli   :   Play the text-based version of the game
 -g, --gui, gui   :   Play the graphical version of the game

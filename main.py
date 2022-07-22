@@ -33,7 +33,10 @@ from help_message import HELP_MESSAGE
 
 def start_cli_game():
     reaction_times = []
-    rounds = int(input("How many rounds do you want to play? "))
+    if len(sys.argv) < 3:
+        rounds = int(input("How many rounds do you want to play? "))
+    else:
+        rounds = int(sys.argv[2])
     for i in range(rounds):
         random_time = random.uniform(0.5, 10.0) # Generate a random floating point number between 0.5 and 10.0
         print(f"\nRound {i+1}")
@@ -73,6 +76,8 @@ class gui_game:
         self.rounds_entry = tk.Entry()
         rounds_label.pack()
         self.rounds_entry.pack()
+        if len(sys.argv) > 2:
+            self.rounds_entry.insert(0, sys.argv[2])
         self.start_button = tk.Button(text="Start game")
         self.start_button.pack()
         self.help_button = tk.Button(text="Help", command=self.show_help_dialog)
