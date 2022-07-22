@@ -31,6 +31,28 @@ import tkinter.messagebox
 import platform
 from help_message import HELP_MESSAGE
 
+def moving_dash(random_time):
+    start_time = time.time()
+    print("\033[?25l", end="")
+    while time.time() < start_time+random_time:
+        print("\r -   ", end="")
+        time.sleep(0.08)
+        print("\r  -  ", end="")
+        time.sleep(0.08)
+        print("\r   - ", end="")
+        time.sleep(0.08)
+        print("\r    -", end="")
+        time.sleep(0.1)
+        print("\r   - ", end="")
+        time.sleep(0.08)
+        print("\r  -  ", end="")
+        time.sleep(0.08)
+        print("\r -   ", end="")
+        time.sleep(0.08)
+        print("\r-    ", end="")
+        time.sleep(0.1)
+    print("\033[?25h")
+
 def start_cli_game():
     reaction_times = []
     if len(sys.argv) < 3:
@@ -45,8 +67,9 @@ def start_cli_game():
         time.sleep(1)
         print("Set")
         time.sleep(1)
-        print("-")
-        time.sleep(random_time)
+        #print("-")
+        #time.sleep(random_time)
+        moving_dash(random_time)
         start_time = time.time()
         input("GO")
         end_time = time.time()
