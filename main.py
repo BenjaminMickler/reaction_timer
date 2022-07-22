@@ -134,6 +134,25 @@ class gui_game:
             else:
                 self.reaction_times = []
                 self.start_game_loop()
+    def moving_dash(self, random_time):
+        start_time = time.time()
+        while time.time() < start_time+random_time:
+            self.label.config(text=" -   ")
+            time.sleep(0.08)
+            self.label.config(text="  -  ")
+            time.sleep(0.08)
+            self.label.config(text="   - ")
+            time.sleep(0.08)
+            self.label.config(text="    -")
+            time.sleep(0.2)
+            self.label.config(text="   - ")
+            time.sleep(0.08)
+            self.label.config(text="  -  ")
+            time.sleep(0.08)
+            self.label.config(text=" -   ")
+            time.sleep(0.08)
+            self.label.config(text="-    ")
+            time.sleep(0.2)
     def game_loop(self):
         self.start_button["state"] = "disabled"
         self.rounds_entry["state"] = "disabled"
@@ -146,8 +165,8 @@ class gui_game:
             time.sleep(1)
             self.label.config(text="Set")
             time.sleep(1)
-            self.label.config(text="-")
-            time.sleep(self.random_time)
+            self.moving_dash(self.random_time)
+            #self.label.config(text="-")
             self.start_time = time.time()
             self.end_time = 0
             self.awaiting_enter = True
