@@ -5,7 +5,6 @@ __license__ = "GPLv3 or later"
 __version__ = "220720222"
 __maintainer__ = "Benjamin Mickler"
 __email__ = "ben@benmickler.com"
-__status__ = "Prototype"
 
 """
 Reaction Timer is free software: you can redistribute it and/or modify
@@ -230,5 +229,7 @@ if __name__ == "__main__":
             gui_game()
         elif sys.argv[1].lower() in ["-c", "--cli", "cli"]:
             start_cli_game()
+        else:
+            print("Invalid arguments, use --help for help")
     else:
         print("Not enough arguments, use --help for help")
